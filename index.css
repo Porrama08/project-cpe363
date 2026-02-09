@@ -66,8 +66,8 @@ nav{
 .maincontent-info .maincontent-btn{
     background-color: #333;
     color: #ebedf1;
-    padding: 1rem;
-    border-radius: 5px;
+    padding: 10px;
+    border-radius: 8px;
     text-decoration: none;
     font-weight: bold;
     margin-top: 10px;
@@ -88,7 +88,7 @@ nav{
     border-radius: 15px;
     margin-left: 80px;
     margin-top: 10px;
-
+    justify-content: center;
 }
 .content-title{
     text-align: center;
@@ -128,13 +128,14 @@ nav{
 /* -----service----- */
 .ser-container{
     background-color: #ebedf1;
-    height: 750px;
+    height: 650px;
     border-color: #333;
     max-width: 1700px;
     align-items: center;
     border-radius: 15px;
     margin-left: 80px;
     margin-top: 40px;
+    justify-content: center;
 }
 .ser-title {
     text-align: center;
@@ -147,7 +148,7 @@ nav{
     column-gap: 1.5rem;
     text-align: center;
     aspect-ratio: 1/1;
-    margin-top: 75px;
+    margin-top: 25px;
 }
 .ser-item{
     position: relative;
@@ -156,9 +157,6 @@ nav{
     width: 400px;
     height: 250px;
     border-radius: 8px;  
-}
-.ser-item p{
-    margin-top: 10px;
 }
 .facility-container {
   display: grid;
@@ -169,9 +167,8 @@ nav{
   margin: auto;
   border-radius: 8px;
   margin-top: 20px;
-  padding: 20px 20px;
 }
-.facility-item {
+.fac-item {
   padding: 10px;
   display: flex;
   align-items: center;
