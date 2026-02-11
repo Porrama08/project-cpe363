@@ -69,7 +69,7 @@ nav{
     padding: 10px;
     border-radius: 8px;
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 400;
     margin-top: 10px;
 }
 .maincontent-img{
@@ -81,7 +81,7 @@ nav{
 /* -----content----- */
 .content{
     background-color: #ebedf1;
-    height: 550px;
+    height: 580px;
     border-color: #333;
     max-width: 1700px;
     align-items: center;
@@ -94,6 +94,7 @@ nav{
     text-align: center;
     font-size: 2rem;
     font-weight: 500;;
+    padding-top: 30px; 
 }
 .content-con{
     display: grid;
@@ -112,7 +113,8 @@ nav{
 }
 .content-item h4{
     margin-top: 1rem;
-    font-weight: 500;
+    font-weight: 400;
+    font-size: 20px;
 }
 .content-item p{
     margin: 1rem 0;
@@ -123,12 +125,13 @@ nav{
     background-color: #333;
     padding: 0.5rem 1rem;
     border-radius: 5px;
+    text-decoration: none;
 }
 
 /* -----service----- */
-.ser-container{
+.service-container{
     background-color: #ebedf1;
-    height: 650px;
+    height: 740px;
     border-color: #333;
     max-width: 1700px;
     align-items: center;
@@ -137,44 +140,43 @@ nav{
     margin-top: 40px;
     justify-content: center;
 }
-.ser-title {
+.service-title {
     text-align: center;
     font-size: 2rem; 
-    color: #333; 
+    color: #333;
+    padding-top: 30px; 
 }
-.ser-detail{
+.service-detail{
     display: grid;
     grid-template-columns: auto auto auto;
     column-gap: 1.5rem;
     text-align: center;
     aspect-ratio: 1/1;
-    margin-top: 25px;
 }
 .facility-container{
-  display: grid;
-  list-style-type: disc;
-  padding-left: 20px;
-  grid-template-columns: repeat(3, 1fr); 
-  align-items: center;
-  background-color: #ebedf1;
-  max-width: 1500px;
-  margin: auto;
-  border-radius: 8px;
-  margin-top: 20px;
+    background-color: #ebedf1;  
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-auto-flow: column;
+    grid-template-rows: repeat(6, auto);
+    gap: 0px 80px;
+    padding: 30px;
+    border-radius: 8px;
+    list-style-type: disc;
 }
-.fac-item{
-  padding: 10px;
-  display: list-item;
-  align-items: center;
-  font-size: 14px;
-  color: #333;
-  list-style-position: inside;
+.facility-item{
+    padding: 8px;
+    display: list-item;
+    align-items: center;
+    color: #333;
+    list-style-position: inside;
 }
-.ser-item{
+.service-item{
     position: relative;
 }
-.ser-item img{
-    width: 400px;
-    height: 250px;
+.service-item img{
+    width: 500px;
+    height: 300px;
+    object-fit: cover;
     border-radius: 8px;  
 }
