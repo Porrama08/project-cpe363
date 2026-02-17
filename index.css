@@ -1,11 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Mitr:wght@200;300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Yellowtail&display=swap');
 * {
     margin: 0%;
     padding: 0%;
     box-sizing: border-box;
     font-family: "Mitr", sans-serif;
     font-weight: 400;
-    font-style: normal;   
+    font-style: normal;  
+    color: #0b203c; 
+}
+body{
+    background-color: #ebedf1;
 }
 .container{
     max-width: 1200;
@@ -16,7 +21,7 @@
 }
 nav{
     padding: 1rem;
-    background-color: #333;
+    background-color: white;
 }
 .nav-con{
     display: flex;
@@ -24,8 +29,12 @@ nav{
 }
 .logo a{
     font-size: 2rem;
-    color: #ebedf1;
+    color: #2c61fe;
     text-decoration: none;
+    font-family: "Yellowtail", cursive;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 40px;
 }
 .menu{
     display: flex;
@@ -36,19 +45,26 @@ nav{
     margin: 0 1rem;
 }
 .menu li a{
-    color: #ebedf1;
+    color: #0b203c;
     text-decoration: none;
+    transition: all 0.3s ease; 
+    padding-bottom: 2px; 
+    border-bottom: 2px solid transparent; 
 } 
+.menu li a:hover {
+    color: #2c61fe; 
+    border-bottom: 2px solid #2c61fe; 
+}
 
 .maincontent{
-    background-color: #ebedf1;
+    background-color: white;
     height: 600px;
-    border-color: #333;
-    max-width: 1700px;
+    border-color: #0b203c;
+    max-width: 1200px;
     align-items: center;
     border-radius: 15px;
-    margin-left: 80px;
-    margin-top: 40px;
+    margin: 40px auto;
+    display: block;
 }
 .maincontent-con{
     display: flex;
@@ -63,14 +79,28 @@ nav{
 .maincontent-info p{
     margin: 1rem 0;
 }
-.maincontent-info .maincontent-btn{
-    background-color: #333;
-    color: #ebedf1;
+.maincontent-info {
     padding: 10px;
     border-radius: 8px;
     text-decoration: none;
-    font-weight: 400;
+    font-weight: 500;
     margin-top: 10px;
+    margin-left: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 20px;
+}
+.maincontent-btn{
+    color: white;
+    background-color: #2c61fe;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+}
+.maincontent-btn:hover{
+    background-color: #2953d6;
 }
 .maincontent-img{
     width: 100%;
@@ -80,35 +110,39 @@ nav{
 
 /* -----content----- */
 .content{
-    background-color: #ebedf1;
-    height: 580px;
+    background-color: white;
+    height: 500px;
     border-color: #333;
-    max-width: 1700px;
+    max-width: 1200px;
     align-items: center;
     border-radius: 15px;
-    margin-left: 80px;
-    margin-top: 10px;
+    margin: 40px auto;
+    display: block;
     justify-content: center;
 }
 .content-title{
-    text-align: center;
+    padding-top: 30px; 
+}
+.content-title h4{
+    margin-left: 40px;
     font-size: 2rem;
     font-weight: 500;;
-    padding-top: 30px; 
 }
 .content-con{
     display: grid;
     grid-template-columns: auto auto auto;
-    column-gap: 1.5rem;
+    gap: 30px;
     text-align: center;
     aspect-ratio: 1/1;
 }
 .content-con img{
+    height: 200px;
+    width: 320px;
     border-radius: 8px;
 }
 .content-title{
     margin: 2rem 0;
-    color: #333;
+    color: #0b203c;
     font-weight: 500;
 }
 .content-item h4{
@@ -121,29 +155,32 @@ nav{
 }
 .content-item a{
     display: inline-block;
-    color: #ebedf1;
-    background-color: #333;
+    color: white;
+    background-color: #2c61fe;
     padding: 0.5rem 1rem;
     border-radius: 5px;
     text-decoration: none;
 }
+.content-item a:hover{
+    background-color: #2953d6;
+}
 
 /* -----service----- */
 .service-container{
-    background-color: #ebedf1;
-    height: 740px;
-    border-color: #333;
-    max-width: 1700px;
+    background-color: white;
+    height: 620px;
+    border-color: #0b203c;
+    max-width: 1200px;
     align-items: center;
     border-radius: 15px;
-    margin-left: 80px;
-    margin-top: 40px;
+    margin: 20px auto;
+    display: block;
     justify-content: center;
 }
 .service-title {
     text-align: center;
     font-size: 2rem; 
-    color: #333;
+    color: #0b203c;
     padding-top: 30px; 
 }
 .service-detail{
@@ -154,7 +191,7 @@ nav{
     aspect-ratio: 1/1;
 }
 .facility-container{
-    background-color: #ebedf1;  
+    background-color: white;  
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-auto-flow: column;
@@ -168,15 +205,21 @@ nav{
     padding: 8px;
     display: list-item;
     align-items: center;
-    color: #333;
+    color: #0b203c;
     list-style-position: inside;
 }
 .service-item{
     position: relative;
 }
 .service-item img{
-    width: 500px;
-    height: 300px;
+    width: 300px;
+    height: 175px;
     object-fit: cover;
-    border-radius: 8px;  
+    border-radius: 8px;
+    transition: transform 0.5s ease;  
+}
+.service-item:hover img {
+    transform: scale(1.1);
+    border-color: #2c61fe;
+    box-shadow: 0 0 15px #2c61fe;
 }
