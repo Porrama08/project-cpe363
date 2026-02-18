@@ -8,6 +8,7 @@
     font-weight: 400;
     font-style: normal;  
     color: #0b203c; 
+    
 }
 body{
     background-color: #ebedf1;
@@ -218,8 +219,120 @@ nav{
     border-radius: 8px;
     transition: transform 0.5s ease;  
 }
-.service-item:hover img {
-    transform: scale(1.1);
-    border-color: #2c61fe;
-    box-shadow: 0 0 15px #2c61fe;
+
+/* ตั้งค่าพื้นฐาน */
+.trip-footer {
+    background-color: #ffffff;
+    border-top: 1px solid #e5e5e5;
+    padding: 40px 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+    padding: 0 20px;
+}
+
+.footer-col {
+    flex: 1;
+    min-width: 200px;
+    margin-bottom: 30px;
+}
+
+/* หัวข้อ */
+.footer-col h3 {
+    font-size: 16px;
+    font-weight: 600;
+    color: #0f294d;
+    margin-bottom: 15px;
+}
+
+.footer-col h3.light-text {
+    color: #8592a6; 
+    font-weight: normal;
+}
+
+
+.footer-col ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-col ul li {
+    margin-bottom: 8px;
+}
+
+.footer-col ul li a {
+    text-decoration: none;
+    color: #455873;
+    font-size: 14px;
+}
+
+.footer-col ul li a:hover {
+    text-decoration: underline;
+}
+
+/* โซเชียลไอคอน */
+.social-icons {
+    margin-top: 15px;
+}
+
+.social-icons a {
+    display: inline-block;
+    width: 32px;
+    height: 32px;
+    background-color: #8592a6;
+    color: white;
+    border-radius: 50%;
+    text-align: center;
+    line-height: 32px;
+    margin-right: 8px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.social-icons a:hover {
+    background-color: #0f294d;
+}
+
+/* ส่วนชำระเงิน */
+.payment-methods {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 5px;
+    max-width: 220px;
+}
+
+.pay-card {
+    border: 1px solid #e5e5e5;
+    border-radius: 3px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+}
+
+.pay-card img {
+    max-width: 100%;
+    max-height: 100%;
+}
+
+/* พาร์ทเนอร์ */
+.mt-20 { margin-top: 20px; }
+
+.partners {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.partner-img {
+    height: 24px;
+    filter: grayscale(100%); 
+    opacity: 0.7;
 }
