@@ -12,10 +12,22 @@
 }
 body{
     background-color: #ebedf1;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 .container{
-    max-width: 1200;
-    margin: 0 auto;
+    background-color: #ffffff;
+    padding: 40px 0;
+    margin: 40px 40px;
+    max-width: 1200px;
+    max-height: 650px;
+    margin: 20px auto;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap; 
+    padding: 0 20px;
+    border-radius: 8px;
 }
 .maincontent-img img{
     border-radius: 8px;
@@ -55,17 +67,6 @@ nav{
 .menu li a:hover {
     color: #2c61fe; 
     border-bottom: 2px solid #2c61fe; 
-}
-
-.maincontent{
-    background-color: white;
-    height: 600px;
-    border-color: #0b203c;
-    max-width: 1200px;
-    align-items: center;
-    border-radius: 15px;
-    margin: 40px auto;
-    display: block;
 }
 .maincontent-con{
     display: flex;
@@ -110,17 +111,7 @@ nav{
 }
 
 /* -----content----- */
-.content{
-    background-color: white;
-    height: 500px;
-    border-color: #333;
-    max-width: 1200px;
-    align-items: center;
-    border-radius: 15px;
-    margin: 40px auto;
-    display: block;
-    justify-content: center;
-}
+
 .content-title{
     padding-top: 30px; 
 }
@@ -137,12 +128,12 @@ nav{
     aspect-ratio: 1/1;
 }
 .content-con img{
-    height: 200px;
-    width: 320px;
+    height: 220px;
+    width: 370px;
     border-radius: 8px;
 }
 .content-title{
-    margin: 2rem 0;
+    margin: 40px 0;
     color: #0b203c;
     font-weight: 500;
 }
@@ -167,24 +158,28 @@ nav{
 }
 
 /* -----service----- */
-.service-container{
-    background-color: white;
-    height: 620px;
-    border-color: #0b203c;
-    max-width: 1200px;
-    align-items: center;
-    border-radius: 15px;
-    margin: 20px auto;
-    display: block;
-    justify-content: center;
+.service {
+    margin: 20px 0;
+   
 }
+
+.service .container{
+    background-color: #ffffff;
+    max-width: 1200px;
+    margin: 0 auto;
+    border-radius: 15px;
+    padding: 30px 40px;
+}
+
 .service-title {
     text-align: center;
     font-size: 2rem; 
     color: #0b203c;
     padding-top: 30px; 
+    margin-left: 350px;
 }
 .service-detail{
+    margin-left: 80px;
     display: grid;
     grid-template-columns: auto auto auto;
     column-gap: 1.5rem;
@@ -201,6 +196,8 @@ nav{
     padding: 30px;
     border-radius: 8px;
     list-style-type: disc;
+    margin-left: 80px;
+
 }
 .facility-item{
     padding: 8px;
@@ -220,12 +217,12 @@ nav{
     transition: transform 0.5s ease;  
 }
 
-/* ตั้งค่าพื้นฐาน */
+/* footer */
 .trip-footer {
     background-color: #ffffff;
     border-top: 1px solid #e5e5e5;
     padding: 40px 0;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-top: auto;
 }
 
 .footer-container {
