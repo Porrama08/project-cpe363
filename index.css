@@ -332,6 +332,7 @@ nav{
     opacity: 0.7;
 }
 
+<<<<<<< HEAD
 /* table */
 .main-table {
     display: grid;
@@ -351,6 +352,20 @@ table {
     box-shadow: 0 4px 8px rgba(0,0,0,0.1); 
 }
 
+=======
+
+/* ตั้งค่าตารางพื้นฐาน */
+table {
+    width: 100%;
+    border-collapse: collapse; /* ทำให้เส้นขอบติดกัน */
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 20px 0;
+    font-size: 16px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1); /* เพิ่มเงาให้ตารางดูมีมิติ */
+}
+
+/* ตกแต่งส่วนหัวตาราง (Header) */
+>>>>>>> 88ad87e8061284c64b2e897fa269da13f9f1fc88
 th, tr:first-child td {
     background-color: #2c3e50;
     color: white;
@@ -359,17 +374,37 @@ th, tr:first-child td {
     font-weight: 500;
 }
 
+<<<<<<< HEAD
+=======
+/* ตกแต่งแถวทั่วไป */
+>>>>>>> 88ad87e8061284c64b2e897fa269da13f9f1fc88
 td {
     padding: 12px 15px;
     border-bottom: 1px solid #ddd;
 }
 
+<<<<<<< HEAD
 tr:nth-child(even) {
     background-color: #f2f2f2; 
 }
 
 tr:nth-child(odd) {
     background-color: #ffffff;
+=======
+/* --- หัวใจหลัก: สลับสีแถว (Zebra Stripes) --- */
+tr:nth-child(even) {
+    background-color: #f2f2f2; /* แถวคู่จะเป็นสีเทาอ่อน */
+}
+
+tr:nth-child(odd) {
+    background-color: #ffffff; /* แถวคี่จะเป็นสีขาว */
+}
+
+/* เอฟเฟกต์เมื่อเอาเมาส์ไปชี้ (Hover) */
+tr:hover {
+    background-color: #e9f5ff; /* เปลี่ยนเป็นสีฟ้าอ่อนเมื่อชี้ */
+    transition: 0.3s;
+>>>>>>> 88ad87e8061284c64b2e897fa269da13f9f1fc88
 }
 
 th, tr:last-child td {
@@ -380,11 +415,15 @@ th, tr:last-child td {
     font-weight: 500;
 }
 
+<<<<<<< HEAD
 tr:hover {
     background-color: #e9f5ff; 
     transition: 0.3s;
 }
 
+=======
+/* ตกแต่งปุ่ม Select */
+>>>>>>> 88ad87e8061284c64b2e897fa269da13f9f1fc88
 button {
     background-color: #27ae60;
     color: white;
@@ -398,6 +437,7 @@ button {
 
 button:hover {
     background-color: #219150;
+<<<<<<< HEAD
 }
 
 .summary-box {
@@ -446,4 +486,6 @@ button:hover {
     border: 0;
     border-top: 2px dashed #cfd8dc;
     margin: 20px 0;
+=======
+>>>>>>> 88ad87e8061284c64b2e897fa269da13f9f1fc88
 }
