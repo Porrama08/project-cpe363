@@ -333,6 +333,9 @@ nav{
 }
 
 /* table */
+.table-section h2{
+    margin-left: 600px;
+}
 .main-table {
     display: grid;
 
