@@ -112,7 +112,7 @@ nav{
 /* -----content----- */
 
 .content-title{
-    padding-top: 30px; 
+    padding-top: 20px; 
 }
 .content-title h4{
     margin-left: 40px;
@@ -172,8 +172,7 @@ nav{
 .service-title {
     text-align: center;
     font-size: 2rem; 
-    color: #0b203c;
-    padding-top: 30px; 
+    color: #0b203c; 
     margin-left: 350px;
 }
 .service-detail{
