@@ -125,10 +125,11 @@ nav{
     gap: 30px;
     text-align: center;
     aspect-ratio: 1/1;
+    margin: 0px auto;
 }
 .content-con img{
     height: 220px;
-    width: 370px;
+    width: 350px;
     border-radius: 8px;
 }
 .content-title{
@@ -173,7 +174,6 @@ nav{
     text-align: center;
     font-size: 2rem; 
     color: #0b203c;
-    padding-top: 30px; 
     margin-left: 350px;
 }
 .service-detail{
