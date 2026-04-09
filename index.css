@@ -178,6 +178,7 @@ nav{
 }
 .service-detail{
     margin-left: 80px;
+    height: 300px;
     display: grid;
     grid-template-columns: auto auto auto;
     column-gap: 1.5rem;
@@ -206,6 +207,7 @@ nav{
 }
 .service-item{
     position: relative;
+    height: 300px;
 }
 .service-item img{
     width: 300px;
