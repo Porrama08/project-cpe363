@@ -2,47 +2,62 @@ let selectedCount = 0;
 let totalRawPrice = 0;
 
 window.onload = function() {
-    const buttons = document.querySelectorAll('.select-btn');
-
-    buttons.forEach(button => {
-        button.addEventListener('click', function() {
-            const row = this.closest('tr');
-            
-            // 1. จัดการเรื่อง Stock
-            let stockCell = row.cells[3]; // ช่อง Stock คือ index ที่ 3
-            let currentStock = parseInt(stockCell.innerText);
-
-            if (currentStock > 0) {
-                // ลดจำนวน Stock ในตาราง
-                currentStock--;
-                stockCell.innerText = currentStock;
-
-                // 2. คำนวณราคา
-                let priceText = row.cells[2].innerText;
-                let price = parseFloat(priceText.replace(/,/g, '').trim());
-
-                if (!isNaN(price)) {
-                    selectedCount++;
-                    totalRawPrice += price;
-                    updateDisplay();
-                }
-
-                // ถ้า Stock หมด ให้ปิดปุ่ม (Optional)
-                if (currentStock === 0) {
-                    this.disabled = true;
-                    this.innerText = "Out of Stock";
-                }
-            } else {
-                alert("ขออภัย ห้องนี้หมดแล้ว");
-            }
-        });
-    });
+    // โหลดข้อมูลห้องพักทันทีที่เปิดหน้าเว็บ
+    fetchRooms();
 };
 
+function fetchRooms() {
+    // ดึงข้อมูลจาก Node.js API
+    fetch('http://localhost:3000/api/rooms')
+        .then(response => response.json())
+        .then(data => {
+            const tableBody = document.getElementById('room-data');
+            tableBody.innerHTML = ''; // ลบคำว่า "กำลังโหลดข้อมูล..." ทิ้ง
+
+            // สร้างแถวตารางจากข้อมูลใน Database
+            data.forEach((room, index) => {
+                const row = `
+                    <tr>
+                        <td>${index + 1}</td>
+                        <td>${room.name}</td>
+                        <td>${room.price.toLocaleString()}</td>
+                        <td>${room.stock}</td>
+                        <td><button class="select-btn" onclick="selectRoom(this, ${room.price})">Select</button></td>
+                    </tr>
+                `;
+                tableBody.innerHTML += row;
+            });
+        })
+        .catch(error => console.error('Error fetching data:', error));
+}
+
+// ฟังก์ชันเมื่อกดปุ่ม Select
+function selectRoom(btn, price) {
+    const row = btn.closest('tr');
+    let stockCell = row.cells[3]; 
+    let currentStock = parseInt(stockCell.innerText);
+
+    if (currentStock > 0) {
+        currentStock--;
+        stockCell.innerText = currentStock;
+
+        selectedCount++;
+        totalRawPrice += price;
+        updateDisplay();
+
+        if (currentStock === 0) {
+            btn.disabled = true;
+            btn.innerText = "Out of Stock";
+            btn.style.backgroundColor = "#ccc";
+        }
+    } else {
+        alert("ขออภัย ห้องนี้หมดแล้ว");
+    }
+}
+
+// ฟังก์ชันคำนวณราคา
 function updateDisplay() {
-    // คำนวณส่วนลด 10% ถ้าเลือกมากกว่า 5 ห้อง
     let discount = (selectedCount > 5) ? totalRawPrice * 0.10 : 0;
-    
     let afterDiscount = totalRawPrice - discount;
     let vat = afterDiscount * 0.07;
     let total = afterDiscount + vat;
@@ -54,19 +69,12 @@ function updateDisplay() {
     document.getElementById('total').innerText = total.toLocaleString();
 }
 
-// 3. ฟังก์ชันสำหรับปุ่ม Confirm
+// ฟังก์ชันปุ่ม Confirm
 function confirmBooking() {
     if (selectedCount === 0) {
         alert("กรุณาเลือกห้องก่อนยืนยัน");
         return;
     }
-
-    alert('สั่งซื้อเรียบร้อย');
-
-    // รีเซ็ตค่าตัวแปร
-    selectedCount = 0;
-    totalRawPrice = 0;
-
-    // อัปเดตการแสดงผลให้กลับเป็นค่าเริ่มต้น
-    updateDisplay();
+    alert('สั่งซื้อเรียบร้อย จำนวน ' + selectedCount + ' ห้อง');
+    location.reload(); 
 }
