@@ -4,6 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Mandarin Oriental</title>
+
+    <link rel="icon" type="image/png" href="pic/M.O.icon.png">
+
     <link rel="stylesheet" href="contact.css">
     <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,300,0,0" rel="stylesheet">
 </head>
@@ -30,7 +33,7 @@
                 <div class="info-item">
                     <span class="material-symbols-outlined">call</span>
                     <div>
-                        <strong>โทรศัพท์</strong>
+                        <strong>เบอร์โทรศัพท์</strong>
                         <p>+66 (0) 2 659 9000</p>
                     </div>
                 </div>
@@ -46,26 +49,26 @@
 
             <div class="contact-form">
                 <h3>ส่งข้อความถึงเรา</h3>
-                <form action="#">
+                <form id="contactForm">
                     <div class="input-row">
                         <div class="input-group">
                             <label for="name">ชื่อ - นามสกุล</label>
-                            <input type="text" id="name" placeholder="ชื่อของคุณ">
+                            <input type="text" id="name" required placeholder="ชื่อของคุณ">
                         </div>
                         <div class="input-group">
                             <label for="email">อีเมล</label>
-                            <input type="email" id="email" placeholder="example@email.com">
+                            <input type="email" id="email" required placeholder="example@email.com">
                         </div>
                     </div>
                     
                     <div class="input-group">
                         <label for="subject">หัวข้อ</label>
-                        <input type="text" id="subject" placeholder="เรื่องที่ต้องการติดต่อ">
+                        <input type="text" id="subject" required placeholder="เรื่องที่ต้องการติดต่อ">
                     </div>
 
                     <div class="input-group">
                         <label for="message">ข้อความ</label>
-                        <textarea id="message" rows="5" placeholder="พิมพ์ข้อความของคุณที่นี่..."></textarea>
+                        <textarea id="message" rows="5" required placeholder="พิมพ์ข้อความของคุณที่นี่..."></textarea>
                     </div>
 
                     <button type="submit" class="submit-btn">ส่งข้อความ</button>
@@ -73,5 +76,7 @@
             </div>
         </div>
     </div>
+    
+    <script src="contact.js"></script>
 </body>
 </html>

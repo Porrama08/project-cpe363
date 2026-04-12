@@ -12,7 +12,7 @@ body {
 }
 
 .facility-container {
-    max-width: 1100px;
+    max-width: 1200px; /* ขยายความกว้างขึ้นเพื่อรองรับ 3 คอลัมน์ */
     margin: 0 auto;
 }
 
@@ -36,21 +36,21 @@ body {
 
 .facility-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(3, 1fr); /* ปรับเป็น 3 คอลัมน์ */
     gap: 20px;
 }
 
 .facility-item {
     position: relative;
-    border-radius: 20px;
+    border-radius: 16px;
     overflow: hidden;
     cursor: pointer;
-    height: 300px;
+    height: 320px; /* ปรับความสูงให้สวยงามพอดี */
+    box-shadow: 0 10px 20px rgba(0,0,0,0.08);
 }
 
 .facility-item.large {
-    grid-column: span 2;
-    height: 400px;
+    grid-column: span 2; /* ช่องใหญ่กินพื้นที่ 2 คอลัมน์ */
 }
 
 .facility-item img {
@@ -67,64 +67,63 @@ body {
     left: 0;
     right: 0;
     height: 100%;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.8) 0%, rgba(0, 0, 0, 0.2) 60%, transparent 100%);
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0.3) 50%, transparent 100%);
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     padding: 30px;
     color: white;
-    transition: background 0.3s;
+    transition: background 0.4s;
 }
 
 .icon {
-    font-size: 40px;
-    margin-bottom: 15px;
+    font-size: 36px;
+    margin-bottom: 12px;
     color: #ffffff;
 }
 
 .facility-item h3 {
-    margin: 0 0 10px 0;
-    font-size: 24px;
+    margin: 0 0 8px 0;
+    font-size: 22px;
     font-weight: 500;
+    letter-spacing: 0.5px;
 }
 
 .facility-item p {
     margin: 0;
-    font-size: 15px;
+    font-size: 14px;
     font-weight: 300;
-    line-height: 1.5;
-    opacity: 0.9;
-    max-width: 80%;
+    line-height: 1.6;
+    opacity: 0.85;
 }
 
 .facility-item:hover img {
-    transform: scale(1.1);
+    transform: scale(1.08);
 }
 
 .facility-item:hover .overlay {
-    background: linear-gradient(to top, rgba(44, 97, 254, 0.85) 0%, rgba(0, 0, 0, 0.3) 100%);
+    background: linear-gradient(to top, rgba(44, 97, 254, 0.9) 0%, rgba(0, 0, 0, 0.4) 100%);
 }
 
+/* สำหรับแท็บเล็ต */
+@media (max-width: 992px) {
+    .facility-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .facility-item.large {
+        grid-column: span 2;
+    }
+}
+
+/* สำหรับมือถือ */
 @media (max-width: 768px) {
     .facility-grid {
         grid-template-columns: 1fr;
     }
-    
     .facility-item {
-        height: 250px;
+        height: 280px;
     }
-
     .facility-item.large {
         grid-column: span 1;
-        height: 250px;
-    }
-
-    .facility-item h3 {
-        font-size: 20px;
-    }
-
-    .facility-item p {
-        max-width: 100%;
-        font-size: 14px;
     }
 }

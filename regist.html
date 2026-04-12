@@ -1,55 +1,75 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="th">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Register</title>
-    <link rel="stylesheet" href="regist.css"> 
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <link rel="icon" type="image/png" href="pic/M.O.icon.png">
+
+    <title>Register - Mandarin Oriental</title>
+    <link rel="stylesheet" href="booking.css"> <style>
+        .regis-container {
+            max-width: 450px;
+            margin: 60px auto;
+            background: white;
+            padding: 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+        .form-group { margin-bottom: 20px; }
+        .form-group label { display: block; margin-bottom: 8px; font-weight: 500; }
+        .form-group input {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            font-size: 16px;
+            box-sizing: border-box; /* สำคัญเพื่อให้ width 100% ไม่เลยขอบ */
+        }
+        .btn-submit {
+            width: 100%;
+            background-color: #2c61fe;
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            font-family: 'Kanit', sans-serif;
+            margin-top: 10px;
+        }
+        .btn-submit:hover { background-color: #1a4bd6; }
+    </style>
 </head>
 <body>
-    <form action="">
-        <h2>สมัครสมาชิก</h2>
-        <span style="color: red;">* &nbsp;&nbsp;&nbsp;</span>
-        <label for="name">ชื่อ</label>
-        <input type="text" id="name" name="name"
-                placeholder="พิมพ์ชื่อ">
-
-        <span style="color: red;">* &nbsp;&nbsp;&nbsp;</span>
-        <label for="surname">นามสกุล</label>
-        <input type="text" id="surname" name="surname"
-                placeholder="นามสกุล">
-
-        <span style="color: red;">* &nbsp;&nbsp;&nbsp;</span>
-        <label for="date">Date of birth</label>
-        <input type="date" name="date" id="date"><span> &nbsp;&nbsp;&nbsp </span>
-
-        <span style="color: red;">* &nbsp;&nbsp;&nbsp;</span>
-        <label for="date">Age:</label>
-        <input type="number" name="age" id="age"><br><br>
-
-        <label>Gender:</label>
-        <input type="radio" name="gender" id="male" value="male">
-        <label  label for="male">Male</label>
-
-        <input type="radio" name="gender" id="female" value="female">
-        <label for="female">Female</label><br><br>
-
-
-        <label for="email">Email</label>
-        <input type="text" id="email" name="email"
-                placeholder="Enter Email address"><br><br>
-
-        <input type="checkbox" name="check" id="check"><label for="check">ข้อมูลถูกต้อง</label><br><br>
+    <div class="regis-container">
+        <h2 style="text-align: center;">สมัครสมาชิก</h2>
+        <p style="text-align: center; color: #666; margin-bottom: 30px;">เข้าร่วมเป็นส่วนหนึ่งของครอบครัว Mandarin Oriental</p>
         
-        <span style="color: red;">* &nbsp;&nbsp;&nbsp;</span>
-        <label for="pass">Password</label>
-        <input type="password" name="pass" id="pass"><br>
+        <form id="regisForm">
+            <div class="form-group">
+                <label>ชื่อผู้ใช้ (Username)</label>
+                <input type="text" id="username" required placeholder="เช่น luxury_guest">
+            </div>
+            <div class="form-group">
+                <label>รหัสผ่าน (Password)</label>
+                <input type="password" id="password" required>
+            </div>
+            <div class="form-group">
+                <label>ชื่อ-นามสกุล</label>
+                <input type="text" id="fullname" required>
+            </div>
+            <div class="form-group">
+                <label>เบอร์โทรศัพท์</label>
+                <input type="tel" id="phone" required>
+            </div>
+            <button type="submit" class="btn-submit">ลงทะเบียน</button>
+        </form>
+        <p style="text-align: center; margin-top: 20px; font-size: 14px;">
+            <a href="index.html" style="color: #666; text-decoration: none;">← กลับสู่หน้าหลัก</a>
+        </p>
+    </div>
 
-        <span style="color: red;">* &nbsp;&nbsp;&nbsp;</span>
-        <label for="cpass">Confirm password</label>
-        <input type="password" name="cpass" id="cpass"><br><br>
-
-         <input type="button" name="btn" id="btn" value="submit">
-    </form>
+    <script src="regist.js"></script>
 </body>
 </html>
