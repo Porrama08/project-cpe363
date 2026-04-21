@@ -160,12 +160,120 @@ body {
     transform: translateX(4px);
 }
 
+/* Modal */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.6);
+    backdrop-filter: blur(4px);
+    z-index: 1000;
+    justify-content: center;
+    align-items: center;
+}
+.modal-overlay.active { display: flex; }
+
+.modal-content {
+    background: #fff;
+    border-radius: 20px;
+    max-width: 700px;
+    width: 90%;
+    max-height: 85vh;
+    overflow-y: auto;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.3);
+    animation: modalIn 0.3s ease;
+}
+
+@keyframes modalIn {
+    from { opacity: 0; transform: scale(0.9) translateY(20px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.modal-img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 20px 20px 0 0;
+}
+
+.modal-body {
+    padding: 35px;
+}
+
+.modal-body h2 {
+    margin: 0 0 8px 0;
+    font-size: 28px;
+    color: #222;
+    text-align: left;
+}
+
+.modal-body .modal-badge {
+    display: inline-block;
+    padding: 5px 14px;
+    border-radius: 30px;
+    font-size: 12px;
+    font-weight: 500;
+    color: #fff;
+    background: #2c61fe;
+    margin-bottom: 20px;
+}
+
+.modal-body .modal-desc {
+    color: #555;
+    line-height: 1.8;
+    font-size: 15px;
+    margin-bottom: 25px;
+    font-weight: 300;
+}
+
+.modal-info-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.modal-info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #555;
+    font-size: 14px;
+}
+
+.modal-info-item .material-symbols-outlined {
+    color: #2c61fe;
+    font-size: 22px;
+}
+
+.modal-close-btn {
+    width: 100%;
+    padding: 14px;
+    background: #2c61fe;
+    color: #fff;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 500;
+    cursor: pointer;
+    font-family: 'Kanit', sans-serif;
+    transition: background 0.3s;
+}
+
+.modal-close-btn:hover { background: #1a4bd6; }
+
 @media (max-width: 768px) {
     .restaurant-grid {
         grid-template-columns: 1fr;
     }
-    
     .page-header h2 {
         font-size: 32px;
+    }
+    .modal-info-grid {
+        grid-template-columns: 1fr;
+    }
+    .modal-img {
+        height: 200px;
     }
 }
