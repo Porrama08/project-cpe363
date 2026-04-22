@@ -113,6 +113,20 @@ app.post('/api/book', (req, res) => {
         .catch(err => res.status(500).json({ success: false, error: err.message }));
 });
 
+// 3. เข้าสู่ระบบ (Login)
+app.post('/api/login', (req, res) => {
+    const { username, password } = req.body;
+    const query = `SELECT * FROM users WHERE username = ? AND password = ?`;
+    
+    db.query(query, [username, password], (err, results) => {
+        if (err) return res.status(500).json({ success: false, message: "เกิดข้อผิดพลาด" });
+        if (results.length === 0) {
+            return res.json({ success: false, message: "ชื่อผู้ใช้หรือรหัสผ่านไม่ถูกต้อง" });
+        }
+        res.json({ success: true, message: "เข้าสู่ระบบสำเร็จ!", user: { fullname: results[0].fullname, phone: results[0].phone } });
+    });
+});
+
 // 3. สมัครสมาชิกใหม่
 app.post('/api/register', (req, res) => {
     const { username, password, fullname, phone } = req.body;

@@ -37,6 +37,63 @@
         </div>
     </div>
 
+    <!-- Booking Modal Overlay -->
+    <div class="modal-overlay" id="bookingModal">
+        <div class="modal-container">
+            <div class="modal-header">
+                <h2>🏨 ยืนยันการจอง</h2>
+                <button class="modal-close-btn" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-columns">
+                    <!-- Left Column: Customer Info + Summary -->
+                    <div class="modal-left">
+                        <div class="modal-section">
+                            <h3>📋 ข้อมูลผู้จอง</h3>
+                            <div class="input-group">
+                                <label for="customerName">ชื่อ-นามสกุล</label>
+                                <input type="text" id="customerName" placeholder="กรอกชื่อ-นามสกุล">
+                            </div>
+                            <div class="input-group">
+                                <label for="customerPhone">เบอร์โทรศัพท์</label>
+                                <input type="tel" id="customerPhone" placeholder="0XX-XXX-XXXX" maxlength="12">
+                            </div>
+                        </div>
+
+                        <div class="modal-section summary-section">
+                            <h3>💰 สรุปยอดชำระ</h3>
+                            <div class="modal-summary-row">
+                                <span>จำนวนห้อง</span>
+                                <span id="modalCount">0</span>
+                                <span>ห้อง</span>
+                            </div>
+                            <div class="modal-summary-row total-row">
+                                <span>ยอดสุทธิ</span>
+                                <span id="modalTotal">0</span>
+                                <span>บาท</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Right Column: QR Code -->
+                    <div class="modal-right">
+                        <div class="modal-section qr-section">
+                            <h3>📱 ชำระเงินผ่าน PromptPay</h3>
+                            <div class="qr-wrapper">
+                                <img src="pic/qrcode.png" alt="PromptPay QR Code" class="qr-image">
+                            </div>
+                            <p class="qr-hint">สแกน QR Code เพื่อชำระเงิน</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button class="modal-confirm-btn" onclick="submitBooking()">✅ ยืนยันการชำระเงิน</button>
+                <button class="modal-cancel-btn" onclick="closeModal()">ยกเลิก</button>
+            </div>
+        </div>
+    </div>
+
     <script src="table.js"></script>
 </body>
 </html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Mandarin Oriental</title>
+
+    <link rel="icon" type="image/png" href="pic/M.O.icon.png">
+
+    <link rel="stylesheet" href="booking.css">
+    <style>
+        .login-container {
+            max-width: 420px;
+            margin: 80px auto;
+            background: white;
+            padding: 45px 40px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .login-container h2 {
+            text-align: center;
+            color: #2c61fe;
+            margin: 0 0 8px 0;
+            font-size: 28px;
+        }
+
+        .login-subtitle {
+            text-align: center;
+            color: #888;
+            margin-bottom: 35px;
+            font-size: 15px;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+            color: #444;
+            font-size: 14px;
+        }
+
+        .form-group input {
+            width: 100%;
+            padding: 13px 16px;
+            border: 2px solid #e8ecf2;
+            border-radius: 10px;
+            font-size: 15px;
+            font-family: 'Kanit', sans-serif;
+            color: #333;
+            background: #fafbfc;
+            box-sizing: border-box;
+            outline: none;
+            transition: all 0.25s ease;
+        }
+
+        .form-group input:focus {
+            border-color: #2c61fe;
+            background: #fff;
+            box-shadow: 0 0 0 4px rgba(44, 97, 254, 0.1);
+        }
+
+        .form-group input::placeholder {
+            color: #bbb;
+        }
+
+        .btn-login {
+            width: 100%;
+            background: linear-gradient(135deg, #2c61fe, #1a4bd6);
+            color: white;
+            border: none;
+            padding: 14px;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: 500;
+            cursor: pointer;
+            font-family: 'Kanit', sans-serif;
+            margin-top: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(44, 97, 254, 0.3);
+        }
+
+        .btn-login:hover {
+            background: linear-gradient(135deg, #1a4bd6, #1340b8);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(44, 97, 254, 0.4);
+        }
+
+        .btn-login:active {
+            transform: translateY(0);
+        }
+
+        .btn-login:disabled {
+            opacity: 0.7;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            margin: 28px 0;
+            color: #ccc;
+            font-size: 13px;
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #eee;
+        }
+
+        .divider span {
+            padding: 0 15px;
+            color: #aaa;
+        }
+
+        .btn-register {
+            display: block;
+            width: 100%;
+            text-align: center;
+            padding: 13px;
+            border: 2px solid #2c61fe;
+            border-radius: 10px;
+            color: #2c61fe;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 500;
+            font-family: 'Kanit', sans-serif;
+            transition: all 0.3s ease;
+            box-sizing: border-box;
+        }
+
+        .btn-register:hover {
+            background: #2c61fe;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(44, 97, 254, 0.25);
+        }
+
+        .back-link {
+            display: block;
+            text-align: center;
+            margin-top: 24px;
+            font-size: 14px;
+        }
+
+        .back-link a {
+            color: #888;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .back-link a:hover {
+            color: #2c61fe;
+        }
+
+        .error-msg {
+            background: #fff5f5;
+            color: #e63946;
+            padding: 12px 16px;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-bottom: 20px;
+            display: none;
+            border: 1px solid #fecdd2;
+            animation: shake 0.4s ease;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            25% { transform: translateX(-8px); }
+            75% { transform: translateX(8px); }
+        }
+
+        .login-icon {
+            text-align: center;
+            font-size: 48px;
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-icon">🔐</div>
+        <h2>เข้าสู่ระบบ</h2>
+        <p class="login-subtitle">กรุณาเข้าสู่ระบบเพื่อทำการจองห้องพัก</p>
+
+        <div class="error-msg" id="errorMsg"></div>
+
+        <form id="loginForm">
+            <div class="form-group">
+                <label>ชื่อผู้ใช้ (Username)</label>
+                <input type="text" id="username" required placeholder="กรอกชื่อผู้ใช้">
+            </div>
+            <div class="form-group">
+                <label>รหัสผ่าน (Password)</label>
+                <input type="password" id="password" required placeholder="กรอกรหัสผ่าน">
+            </div>
+            <button type="submit" class="btn-login">เข้าสู่ระบบ</button>
+        </form>
+
+        <div class="divider"><span>ยังไม่มีบัญชี?</span></div>
+
+        <a href="regist.html" class="btn-register">สมัครสมาชิกใหม่</a>
+
+        <div class="back-link">
+            <a href="book.html">← กลับไปหน้าห้องพัก</a>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMsg = document.getElementById('errorMsg');
+            const loginBtn = this.querySelector('.btn-login');
+
+            // ซ่อน error เดิม
+            errorMsg.style.display = 'none';
+
+            // แสดงสถานะ loading
+            loginBtn.disabled = true;
+            loginBtn.innerText = '⏳ กำลังเข้าสู่ระบบ...';
+
+            fetch('http://localhost:3000/api/login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ username, password })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    // บันทึกข้อมูล user ลง sessionStorage
+                    sessionStorage.setItem('loggedIn', 'true');
+                    sessionStorage.setItem('fullname', data.user.fullname);
+                    sessionStorage.setItem('phone', data.user.phone);
+                    
+                    // ไปหน้า table.html
+                    window.location.href = 'table.html';
+                } else {
+                    errorMsg.innerText = '❌ ' + data.message;
+                    errorMsg.style.display = 'block';
+                    loginBtn.disabled = false;
+                    loginBtn.innerText = 'เข้าสู่ระบบ';
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                errorMsg.innerText = '❌ เชื่อมต่อเซิร์ฟเวอร์ไม่ได้ กรุณาลองใหม่';
+                errorMsg.style.display = 'block';
+                loginBtn.disabled = false;
+                loginBtn.innerText = 'เข้าสู่ระบบ';
+            });
+        });
+    </script>
+</body>
+</html>
